@@ -9,7 +9,7 @@ let package = Package(
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
             name: "TestPackage",
-            targets: ["TestPackage"]),
+            targets: ["TestPackage", "SimpleMath"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,6 +21,7 @@ let package = Package(
         .target(
             name: "TestPackage",
             dependencies: []),
+        .binaryTarget(name: "SimpleMath", url: "https://github.com/antoniohdzamb/SimpleMathFramework/raw/main/SimpleMath.xcframework.zip", checksum: "cb4f6a4fbfc890665fe6959ec610365f9c04597ed9acc8e37ad665190114cd0b"),
         .testTarget(
             name: "TestPackageTests",
             dependencies: ["TestPackage"]),
